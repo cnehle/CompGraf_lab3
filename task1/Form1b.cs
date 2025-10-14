@@ -142,7 +142,7 @@ namespace lab2_task1
 
             for (int i = left; i <= right; i++)
             {
-                Color patternColor = GetPatternColor(i, y);
+                Color patternColor = GetPatternColor(i - startPoint.X, y - startPoint.Y);
                 bitmap.SetPixel(i, y, patternColor);
             }
 

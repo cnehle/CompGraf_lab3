@@ -1,0 +1,13 @@
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\bin\Debug\lab2_task1.exe.config
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\bin\Debug\lab2_task1.exe
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\bin\Debug\lab2_task1.pdb
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.csproj.AssemblyReference.cache
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.Form1.resources
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.Form1a.resources
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.Form1b.resources
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.Form1c.resources
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.Properties.Resources.resources
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.csproj.GenerateResource.cache
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.csproj.CoreCompileInputs.cache
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.exe
+C:\Users\vika\Documents\GitHub\CompGraf_lab3\task1\obj\Debug\lab2_task1.pdb
