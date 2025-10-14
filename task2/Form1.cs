@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -164,25 +164,33 @@ namespace Lab3
                 return;
 
             int dx = Math.Abs(x1 - x0);
-            int dy = Math.Abs(y1 - y0);
-            int sx = (x0 < x1) ? 1 : -1;
-            int sy = (y0 < y1) ? 1 : -1;
-            int err = dx - dy;
+            int dy = -Math.Abs(y1 - y0);
+            int sx = x0 < x1 ? 1 : -1;
+            int sy = y0 < y1 ? 1 : -1;
+            int error = dx + dy;
 
             while (true)
             {
                 SetPixel(bmp, x0, y0, color);
-                if (x0 == x1 && y0 == y1) break;
 
-                int e2 = 2 * err;
-                if (e2 > -dy)
+                if (x0 == x1 && y0 == y1)
+                    break;
+
+                int error2 = 2 * error;
+
+                if (error2 >= dy) // horizontal step
                 {
-                    err -= dy;
+                    if (x0 == x1)
+                        break;
+                    error += dy;
                     x0 += sx;
                 }
-                if (e2 < dx)
+
+                if (error2 <= dx) // vertical step
                 {
-                    err += dx;
+                    if (y0 == y1)
+                        break;
+                    error += dx;
                     y0 += sy;
                 }
             }
