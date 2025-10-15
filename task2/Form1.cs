@@ -151,12 +151,12 @@ namespace Lab3
             this.Invalidate();
         }
 
-        private void DrawLineBresenham(Bitmap bmp, Point p1, Point p2, Color color)
+        private void DrawLineBresenham(Bitmap bmp, Point start, Point end, Color color)
         {
-            int x0 = p1.X;
-            int y0 = p1.Y;
-            int x1 = p2.X;
-            int y1 = p2.Y;
+            int x0 = start.X;
+            int y0 = start.Y;
+            int x1 = end.X;
+            int y1 = end.Y;
 
             // Проверяем, чтобы координаты были в пределах холста
             if (x0 < 0 || x0 >= bmp.Width || y0 < 0 || y0 >= bmp.Height ||
@@ -164,34 +164,58 @@ namespace Lab3
                 return;
 
             int dx = Math.Abs(x1 - x0);
-            int dy = -Math.Abs(y1 - y0);
-            int sx = x0 < x1 ? 1 : -1;
-            int sy = y0 < y1 ? 1 : -1;
-            int error = dx + dy;
+            int dy = Math.Abs(y1 - y0);
 
-            while (true)
+            if (dy <= dx)
             {
-                SetPixel(bmp, x0, y0, color);
-
-                if (x0 == x1 && y0 == y1)
-                    break;
-
-                int error2 = 2 * error;
-
-                if (error2 >= dy) // horizontal step
+                if (x0 > x1)
                 {
-                    if (x0 == x1)
-                        break;
-                    error += dy;
-                    x0 += sx;
+                    Swap(ref x0, ref x1);
+                    Swap(ref y0, ref y1);
                 }
 
-                if (error2 <= dx) // vertical step
+                int yi = y0 < y1 ? 1 : -1;
+                int D = 2 * dy - dx;
+                int y = y0;
+
+                for (int x = x0; x <= x1; x++)
                 {
-                    if (y0 == y1)
-                        break;
-                    error += dx;
-                    y0 += sy;
+                    SetPixel(bmp, x, y, color);
+                    if (D > 0)
+                    {
+                        y += yi;
+                        D += 2 * (dy - dx);
+                    }
+                    else
+                    {
+                        D += 2 * dy;
+                    }
+                }
+            }
+            else
+            {
+                if (y0 > y1)
+                {
+                    Swap(ref x0, ref x1);
+                    Swap(ref y0, ref y1);
+                }
+
+                int xi = x0 < x1 ? 1 : -1;
+                int D = 2 * dx - dy;
+                int x = x0;
+
+                for (int y = y0; y <= y1; y++)
+                {
+                    SetPixel(bmp, x, y, color);
+                    if (D > 0)
+                    {
+                        x += xi;
+                        D += 2 * (dx - dy);
+                    }
+                    else
+                    {
+                        D += 2 * dx;
+                    }
                 }
             }
         }
