@@ -180,7 +180,7 @@ namespace lab2_task1
             CreateBlankImage();
             using (Graphics g = Graphics.FromImage(originalBitmap))
             {
-                Pen borderPen = new Pen(borderColor, 2);
+                Pen borderPen = new Pen(borderColor, 1);
                 // Большой прямоугольник
                 g.DrawRectangle(borderPen, 100, 100, 200, 150);
                 borderPen.Dispose();
@@ -198,7 +198,7 @@ namespace lab2_task1
             CreateBlankImage();
             using (Graphics g = Graphics.FromImage(originalBitmap))
             {
-                Pen borderPen = new Pen(borderColor, 2);
+                Pen borderPen = new Pen(borderColor, 1);
                 // Большой круг
                 g.DrawEllipse(borderPen, 150, 100, 200, 200);
                 borderPen.Dispose();
@@ -216,7 +216,7 @@ namespace lab2_task1
             CreateBlankImage();
             using (Graphics g = Graphics.FromImage(originalBitmap))
             {
-                Pen borderPen = new Pen(borderColor, 2);
+                Pen borderPen = new Pen(borderColor, 1);
                 // Большой треугольник
                 Point[] triangle = {
                     new Point(300, 350),
@@ -239,7 +239,7 @@ namespace lab2_task1
             CreateBlankImage();
             using (Graphics g = Graphics.FromImage(originalBitmap))
             {
-                Pen borderPen = new Pen(borderColor, 2);
+                Pen borderPen = new Pen(borderColor, 1);
                 // Комплексная фигура - прямоугольник с кругом внутри
                 g.DrawRectangle(borderPen, 80, 80, 300, 200);
                 g.DrawEllipse(borderPen, 150, 120, 100, 100);
